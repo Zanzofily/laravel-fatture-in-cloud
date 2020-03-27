@@ -93,10 +93,10 @@ class Auth
      *
      * @return mixed|string
      */
-    public function post($path, $data = [])
+    public function post($path, $method = 'GET',  $data = [])
     {
         $params = array_merge($this->params, $data);
 
-        return $this->call($path, $params, 'POST');
+        return $this->call($path, $params, $method);
     }
 }

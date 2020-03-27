@@ -21,7 +21,13 @@ class FattureInCloud
      */
     public function getInfo()
     {
-        $data = $this->auth->post('clienti/lista');
+        $data = $this->auth->post('clienti/lista', 'POST');
+
+        return $data;
+    }
+
+    public function request( $path, $method = 'GET', $params = []) {
+        $data = $this->auth->post($path, $method, $params);
 
         return $data;
     }
